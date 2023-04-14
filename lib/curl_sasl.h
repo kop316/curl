@@ -46,6 +46,7 @@ struct connectdata;
 
 /* Authentication mechanism values */
 #define SASL_AUTH_NONE          0
+#define SASL_AUTH_DISABLE       0xff00
 #define SASL_AUTH_ANY           0xffff
 #define SASL_AUTH_DEFAULT       (SASL_AUTH_ANY & ~SASL_MECH_EXTERNAL)
 

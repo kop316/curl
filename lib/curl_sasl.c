@@ -173,6 +173,8 @@ CURLcode Curl_sasl_parse_url_auth_option(struct SASL *sasl,
 
   if(!strncmp(value, "*", len))
     sasl->prefmech = SASL_AUTH_DEFAULT;
+  else if(!strncmp(value, "+LOGIN", len))
+    sasl->prefmech = SASL_AUTH_DISABLE;
   else {
     unsigned short mechbit = Curl_sasl_decode_mech(value, len, &mechlen);
     if(mechbit && mechlen == len)
