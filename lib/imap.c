@@ -1955,6 +1955,9 @@ static CURLcode imap_parse_url_options(struct connectdata *conn)
   case SASL_AUTH_DEFAULT:
     imapc->preftype = IMAP_TYPE_ANY;
     break;
+  case SASL_AUTH_DISABLE:
+    imapc->preftype = IMAP_TYPE_CLEARTEXT;
+    break;
   default:
     imapc->preftype = IMAP_TYPE_SASL;
     break;

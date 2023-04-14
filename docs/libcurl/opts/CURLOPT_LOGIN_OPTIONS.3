@@ -43,6 +43,11 @@ options, such as the preferred authentication mechanism via "AUTH=NTLM" or
 "AUTH=*", and should be used in conjunction with the \fICURLOPT_USERNAME(3)\fP
 option.
 
+IMAP supports the option "AUTH=+LOGIN" to use the LOGIN command. Care should
+be taken in using this option, as it will send out your password in plain text.
+This will not work if the IMAP server disables LOGIN (e.g. to prevent password
+snooping).
+
 The application does not have to keep the string around after setting this
 option.
 .SH DEFAULT
